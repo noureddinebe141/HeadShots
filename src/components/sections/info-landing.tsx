@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Icons } from "@/components/shared/icons";
 import { useTranslations } from "next-intl";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
@@ -52,28 +51,28 @@ export default function InfoLanding() {
           </div>
         </div>
       </MaxWidthWrapper>
+
+      {/* ===== New Slider Section (Full-width Scrolling Images) ===== */}
+      <div className="relative overflow-hidden w-full py-10">
+        <div className="flex animate-marquee space-x-6">
+          {[
+            "/_static/index/hero-landing.png",
+            "/_static/index/hero-landing2.png",
+            "/_static/index/hero-landing3.png",
+            "/_static/index/hero-landing4.png",
+            "/_static/index/hero-landing5.png"
+          ].map((src, i) => (
+            <Image
+              key={i}
+              src={src}
+              alt={`headshot ${i}`}
+              width={300}
+              height={300}
+              className="rounded-xl object-cover shadow-lg"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
-
-{/* ===== New Slider Section (Full-width Scrolling Images) ===== */}
-<div className="relative overflow-hidden w-full py-10">
-  <div className="flex animate-marquee space-x-6">
-    {[
-      "/_static/index/hero-landing.png",
-      "/_static/index/hero-landing2.png",
-      "/_static/index/hero-landing3.png",
-      "/_static/index/hero-landing4.png",
-      "/_static/index/hero-landing5.png"
-    ].map((src, i) => (
-      <Image
-        key={i}
-        src={src}
-        alt={`headshot ${i}`}
-        width={300}
-        height={300}
-        className="rounded-xl object-cover shadow-lg"
-      />
-    ))}
-  </div>
-</div>
