@@ -6,20 +6,20 @@
     "name": "UllrAI",
     "url": "https://twitter.com/UllrAI"
   },
-  "scripts": {
-    "dev": "next dev",
-    "build": "prisma db push --accept-data-loss && next build",
-    "turbo": "next dev --turbo",
-    "start": "next start",
-    "lint": "next lint",
-    "fix": "next lint --fix",
-    "prebuild": "npm run prisma:db:push && npm run fix",
-    "preview": "next build && next start",
-    "postinstall": "dotenv -e .env.local -- prisma generate",
-    "prisma:db:push": "dotenv -e .env.local -- prisma db push",
-    "prisma:migrate:dev": "dotenv -e .env.local -- prisma migrate dev",
-    "email": "email dev --dir emails --port 3333"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "prisma db push --accept-data-loss && next build",
+  "turbo": "next dev --turbo",
+  "start": "next start",
+  "lint": "next lint",
+  "fix": "next lint --fix",
+  "prebuild": "prisma db push --accept-data-loss && npm run fix",
+  "preview": "next build && next start",
+  "postinstall": "dotenv -e .env.local -- prisma generate",
+  "prisma:db:push": "dotenv -e .env.local -- prisma db push --accept-data-loss",
+  "prisma:migrate:dev": "dotenv -e .env.local -- prisma migrate dev",
+  "email": "email dev --dir emails --port 3333"
+},
   "dependencies": {
     "@auth/prisma-adapter": "^2.4.1",
     "@aws-sdk/client-s3": "^3.645.0",
