@@ -3,6 +3,21 @@ import Image from "next/image";
 import { Icons } from "@/components/shared/icons";
 import { useTranslations } from "next-intl";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
+import Slider from "@/components/Slider";
+import InfoLanding from "@/components/InfoLanding";
+
+export default function Home() {
+  return (
+    <main className="flex flex-col items-center justify-center min-h-screen">
+      {/* سلايدر */}
+      <Slider />
+
+      {/* باقي الصفحة */}
+      <InfoLanding />
+    </main>
+  );
+}
+
 
 export default function InfoLanding() {
   const t = useTranslations("InfoLanding");
